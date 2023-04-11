@@ -10,7 +10,6 @@ const convertQR = async () => {
   const QR = await qrcode.toDataURL(urlCv);
   const htmlContent = `
   <div style="display: flex; justify-content: center; align-items: center;">
-  <h2>Prueba con Node</h2>
   <img src="${QR}">
   </div>
   `;
@@ -30,7 +29,7 @@ const convertPDF = async (valorHTML) => {
 
   doc.pipe(fs.createWriteStream(__dirname + "/pub/example.pdf"));
 
-  doc.image("pub/image.jpg", 0, 30, { width: 500 });
+  doc.image("pub/image.jpg", 0, 30, { width: 50 });
 
   doc.end();
 };
